@@ -1,0 +1,152 @@
+/* ==========================================================================
+   FALL IN LOVE — ANIMATIONS & KEYFRAMES
+   Smooth morphing transitions, pulsing glowing beacons, floating musical notes,
+   and 3D parallax elements
+   ========================================================================== */
+
+/* Orb background floating keyframes */
+@keyframes orbFloat1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6vw, 4vh) scale(1.1); }
+  100% { transform: translate(-4vw, 8vh) scale(0.95); }
+}
+
+@keyframes orbFloat2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-8vw, -5vh) scale(1.15); }
+  100% { transform: translate(5vw, -3vh) scale(0.9); }
+}
+
+@keyframes orbFloat3 {
+  0% { transform: translate(0, 0) scale(0.9); }
+  50% { transform: translate(4vw, -6vh) scale(1.1); }
+  100% { transform: translate(-3vw, 4vh) scale(1.05); }
+}
+
+/* Sparkle icon spin */
+@keyframes sparkleRotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.25); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Pulsing badge beacon */
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.9);
+    box-shadow: 0 0 4px var(--theme-primary);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+    box-shadow: 0 0 14px var(--theme-primary), 0 0 24px var(--theme-secondary);
+  }
+}
+
+/* Hero entrance */
+@keyframes heroEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Card morph in transition */
+@keyframes cardMorphIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* CTA button shine sweep */
+@keyframes shineSweep {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  30%, 100% { transform: translateX(100%) rotate(30deg); }
+}
+
+/* Spinning vinyl disk */
+@keyframes vinylSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Floating musical notes */
+@keyframes noteFloat1 {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6) rotate(-10deg); }
+  30% { opacity: 0.9; transform: translate(18px, -24px) scale(1) rotate(15deg); }
+  70% { opacity: 0.7; transform: translate(32px, -55px) scale(1.1) rotate(-8deg); }
+  100% { opacity: 0; transform: translate(45px, -85px) scale(0.8) rotate(20deg); }
+}
+
+@keyframes noteFloat2 {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6) rotate(10deg); }
+  35% { opacity: 0.9; transform: translate(-20px, -28px) scale(1) rotate(-15deg); }
+  75% { opacity: 0.7; transform: translate(-36px, -60px) scale(1.15) rotate(12deg); }
+  100% { opacity: 0; transform: translate(-50px, -90px) scale(0.7) rotate(-20deg); }
+}
+
+@keyframes noteFloat3 {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.5) rotate(0deg); }
+  40% { opacity: 1; transform: translate(0px, -35px) scale(1.2) rotate(180deg); }
+  80% { opacity: 0.6; transform: translate(12px, -70px) scale(1) rotate(360deg); }
+  100% { opacity: 0; transform: translate(20px, -100px) scale(0.5) rotate(540deg); }
+}
+
+/* Toast fade in/out */
+@keyframes toastFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 15px);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+}
+
+/* Slide up fade */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Modal animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes modalScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

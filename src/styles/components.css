@@ -1,0 +1,771 @@
+/* ==========================================================================
+   FALL IN LOVE — LUXURY REDESIGN COMPONENTS STYLESHEET
+   Cinematic Panoramic Stage Altar, Hero Stage Portals, Integrated Turntable Music Deck,
+   and Glassmorphism Navigation Dock
+   ========================================================================== */
+
+/* ----------------- 1. HERO SECTION (MAIN PAGE LANDING) ----------------- */
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 980px;
+  padding: 24px 20px 80px;
+  animation: heroEntrance 0.9s var(--transition-smooth);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 20px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--theme-secondary);
+  font-weight: 600;
+}
+
+.hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--theme-primary);
+  box-shadow: 0 0 8px var(--theme-primary);
+  animation: pulseGlow 2s infinite alternate;
+}
+
+.hero-title-wrapper {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.hero-devanagari-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 12vw, 8.5rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.035);
+  letter-spacing: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.hero-main-title {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 8vw, 6.2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ffffff 25%, #ffe4e6 55%, var(--theme-secondary) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+  font-style: italic;
+  color: var(--color-text-muted);
+  max-width: 720px;
+  margin-bottom: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.hero-tagline {
+  font-size: 0.95rem;
+  color: var(--color-text-dim);
+  max-width: 640px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.btn-primary-glow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 40px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-secondary) 100%);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 30px rgba(244, 63, 94, 0.4), 0 0 20px var(--theme-glow-1);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  overflow: hidden;
+  border: none;
+}
+
+.btn-primary-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.3) 50%, transparent 60%);
+  transform: rotate(30deg);
+  animation: shineSweep 4s infinite linear;
+}
+
+.btn-primary-glow:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(244, 63, 94, 0.55), 0 0 35px var(--theme-glow-1);
+}
+
+/* 6-Stage Portals Grid on Hero */
+.hero-stages-grid-section {
+  width: 100%;
+  max-width: 880px;
+  margin-top: 10px;
+}
+
+.hero-grid-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.grid-header-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.grid-header-text {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--theme-secondary);
+  font-weight: 600;
+}
+
+.hero-portals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.hero-stage-portal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 10px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.hero-stage-portal:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--theme-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 15px var(--theme-glow-1);
+}
+
+.portal-badge-num {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--theme-secondary);
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+
+.portal-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.portal-devanagari {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  color: var(--color-text-dim);
+  margin-top: 2px;
+}
+
+.portal-song-hint {
+  font-size: 0.68rem;
+  color: var(--color-text-dim);
+  margin-top: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+}
+
+/* ----------------- 2. CINEMATIC PANORAMIC STAGE ALTAR ----------------- */
+
+.stage-altar-card {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  padding: 36px 44px;
+  border-radius: var(--radius-xl);
+  background: var(--glass-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow), var(--glass-inner-glow);
+  animation: cardMorphIn 0.6s var(--transition-smooth);
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Altar Top Header */
+.altar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.altar-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.altar-stage-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--theme-secondary);
+  letter-spacing: 2px;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.altar-devanagari-watermark {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.altar-meaning-pill {
+  font-size: 0.92rem;
+  color: var(--theme-secondary);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Altar Body Grid */
+.altar-body-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+/* Left Pane: Poetry & Soul */
+.altar-poetry-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.altar-title-block {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.altar-stage-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.05;
+  background: linear-gradient(135deg, #ffffff 40%, var(--theme-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.altar-devanagari-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 600;
+}
+
+.altar-shayari-card {
+  position: relative;
+  padding: 24px 28px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--theme-primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.shayari-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.shayari-quote-glyph {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--theme-primary);
+  opacity: 0.5;
+}
+
+.btn-copy-shayari {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-text-dim);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-copy-shayari:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border-color: var(--theme-primary);
+}
+
+.btn-copy-shayari.copied {
+  background: var(--theme-primary);
+  color: #fff;
+  border-color: var(--theme-primary);
+}
+
+.shayari-hindi-content {
+  font-family: var(--font-serif);
+  font-size: 1.38rem;
+  line-height: 1.65;
+  color: #ffffff;
+  font-weight: 600;
+  white-space: pre-line;
+  margin-bottom: 14px;
+  letter-spacing: 0.3px;
+}
+
+.shayari-english-content {
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Right Pane: Integrated Turntable Music Deck */
+.altar-music-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 24px 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.deck-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deck-mood-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--theme-secondary);
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Turntable Vinyl Showcase */
+.deck-vinyl-showcase {
+  position: relative;
+  width: 100%;
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.5) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.vinyl-record {
+  position: relative;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2a2035 15%, #0e0a15 50%, #2a2035 70%, #0e0a15 100%);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px var(--theme-glow-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+.vinyl-record.spinning {
+  animation: vinylSpin 7s linear infinite;
+}
+
+.vinyl-center-disc {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--theme-primary), var(--theme-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.vinyl-lines {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.vinyl-notes-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.vinyl-notes-overlay.active {
+  display: block;
+}
+
+.music-note {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  font-size: 1.3rem;
+  color: var(--theme-secondary);
+  opacity: 0;
+  text-shadow: 0 0 10px var(--theme-primary);
+}
+
+.music-note.n1 { animation: noteFloat1 3.2s infinite ease-out; }
+.music-note.n2 { animation: noteFloat2 3.8s infinite ease-out 1.1s; }
+.music-note.n3 { animation: noteFloat3 4.2s infinite ease-out 2.2s; }
+
+/* Deck Song Details */
+.deck-song-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.deck-song-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.deck-singer-name {
+  font-size: 0.94rem;
+  color: var(--theme-secondary);
+  font-weight: 600;
+}
+
+.deck-credits-row {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Integrated Player Controls in Deck */
+.deck-player-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.deck-scrubber-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.deck-time-display {
+  font-size: 0.76rem;
+  color: var(--color-text-dim);
+  font-family: monospace;
+}
+
+.deck-scrubber-bar {
+  position: relative;
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+}
+
+.deck-scrubber-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--theme-primary), var(--theme-secondary));
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 8px var(--theme-primary);
+}
+
+.deck-buttons-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.btn-deck-play {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-secondary) 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--theme-glow-1);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-deck-play:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 25px var(--theme-glow-1);
+}
+
+.deck-volume-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-deck-mute {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-deck-mute:hover {
+  color: #fff;
+}
+
+.deck-volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  outline: none;
+  cursor: pointer;
+}
+
+.deck-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--theme-secondary);
+  cursor: pointer;
+  box-shadow: 0 0 6px var(--theme-primary);
+}
+
+/* ----------------- 3. STICKY BOTTOM TAB DOCK NAVIGATION ----------------- */
+
+.bottom-dock-nav {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: calc(100% - 32px);
+  max-width: 840px;
+}
+
+.dock-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(18, 12, 28, 0.82);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-full);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(255, 255, 255, 0.05);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dock-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.dock-tab-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  color: var(--color-text-dim);
+  font-size: 0.84rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+}
+
+.dock-tab-item:hover {
+  color: var(--color-text-main);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.dock-tab-item.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.08) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 4px 20px var(--theme-glow-1), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.dock-tab-item.active .tab-icon-svg {
+  color: var(--theme-secondary);
+  filter: drop-shadow(0 0 8px var(--theme-primary));
+}
+
+.dock-tab-number {
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+/* ----------------- 4. RESPONSIVE BREAKPOINTS ----------------- */
+
+@media (max-width: 900px) {
+  .altar-body-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .stage-altar-card {
+    padding: 28px 24px;
+  }
+  .hero-portals-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .altar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .hero-portals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .deck-buttons-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .deck-volume-box {
+    justify-content: center;
+  }
+  .dock-tab-text {
+    display: none;
+  }
+}

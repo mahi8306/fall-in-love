@@ -1,0 +1,215 @@
+/* ==========================================================================
+   FALL IN LOVE — RESPONSIVE DESIGN (320px to 4K Displays)
+   Cinematic Panoramic Layout Optimization
+   ========================================================================== */
+
+/* ----------------- TABLETS & MEDIUM SCREENS (< 1024px) ----------------- */
+@media (max-width: 1024px) {
+  .app-viewport {
+    padding: 72px 18px 100px 18px;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  html, body {
+    overflow-y: auto;
+  }
+
+  .stage-altar-card {
+    padding: 28px 24px;
+    gap: 20px;
+    max-width: 95vw;
+  }
+
+  .altar-body-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .viewport-nav-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-prev { left: 8px; }
+  .nav-next { right: 8px; }
+}
+
+/* ----------------- MOBILE SCREENS (< 768px) ----------------- */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  .brand-text {
+    font-size: 1.1rem;
+  }
+
+  .stage-progress-container {
+    width: 110px;
+  }
+
+  .stage-progress-label {
+    font-size: 0.62rem;
+  }
+
+  .app-viewport {
+    padding: 64px 12px 90px 12px;
+  }
+
+  .hero-container {
+    padding: 16px 8px 60px;
+  }
+
+  .hero-main-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.88rem;
+    margin-bottom: 24px;
+  }
+
+  .btn-primary-glow {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-portals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stage-altar-card {
+    padding: 20px 16px;
+    gap: 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .altar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .altar-stage-title {
+    font-size: 2.2rem;
+  }
+
+  .altar-devanagari-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .shayari-hindi-content {
+    font-size: 1.15rem;
+    line-height: 1.55;
+  }
+
+  .shayari-english-content {
+    font-size: 0.85rem;
+  }
+
+  .deck-vinyl-showcase {
+    height: 110px;
+  }
+
+  .vinyl-record {
+    width: 80px;
+    height: 80px;
+  }
+
+  .deck-song-title {
+    font-size: 1.2rem;
+  }
+
+  .deck-buttons-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .deck-volume-box {
+    justify-content: center;
+  }
+
+  /* Dock navigation on mobile */
+  .bottom-dock-nav {
+    bottom: 8px;
+    width: calc(100% - 16px);
+  }
+
+  .dock-inner {
+    padding: 6px 10px;
+    gap: 4px;
+  }
+
+  .dock-tab-item {
+    padding: 6px 12px;
+    font-size: 0.76rem;
+  }
+
+  .dock-tab-text {
+    display: none;
+  }
+
+  .viewport-nav-btn {
+    display: none;
+  }
+}
+
+/* ----------------- SMALL PHONES (< 380px) ----------------- */
+@media (max-width: 380px) {
+  .hero-main-title {
+    font-size: 2.1rem;
+  }
+
+  .altar-stage-title {
+    font-size: 1.8rem;
+  }
+
+  .shayari-hindi-content {
+    font-size: 1.05rem;
+  }
+
+  .dock-tab-item {
+    padding: 6px 8px;
+  }
+}
+
+/* ----------------- ULTRA-WIDE & 4K MONITORS (> 1920px) ----------------- */
+@media (min-width: 1920px) {
+  .stage-altar-card {
+    max-width: 1300px;
+    padding: 48px 56px;
+    gap: 36px;
+  }
+
+  .hero-main-title {
+    font-size: 6.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+
+  .shayari-hindi-content {
+    font-size: 1.65rem;
+  }
+
+  .bottom-dock-nav {
+    max-width: 1000px;
+    bottom: 24px;
+  }
+
+  .dock-tab-item {
+    padding: 12px 24px;
+    font-size: 0.96rem;
+  }
+}

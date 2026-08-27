@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Fall in Love — A Symphonic Journey Through the 6 Stages of Romance</title>
+    <meta name="description" content="Experience the eternal journey of love through the Main Page prologue and 6 immersive sacred stages: Mulaqat, Nazdeeki, Mohabbat, Bichadna, Manzil, and Jeevan Saathi with timeless melodies and dynamic visual art." />
+    <meta name="theme-color" content="#0d0814" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="./src/styles/index.css" />
+    <link rel="stylesheet" href="./src/styles/components.css" />
+    <link rel="stylesheet" href="./src/styles/animations.css" />
+    <link rel="stylesheet" href="./src/styles/responsive.css" />
+  </head>
+  <body class="theme-hero" data-stage="0">
+    <!-- Visual Canvas Backgrounds -->
+    <canvas id="vfx-canvas" class="vfx-canvas"></canvas>
+
+    <!-- Dynamic Ambient Radial Glow Orbs -->
+    <div class="ambient-glow-wrapper" aria-hidden="true">
+      <div class="glow-orb glow-orb-1"></div>
+      <div class="glow-orb glow-orb-2"></div>
+      <div class="glow-orb glow-orb-3"></div>
+      <div class="vignette-overlay"></div>
+    </div>
+
+    <!-- Top Navigation & Stage Progress Bar -->
+    <header class="app-header">
+      <div class="header-left">
+        <a href="#stage-0" class="brand-logo" id="brand-home-btn" aria-label="Return to Start">
+          <span class="brand-sparkle">✦</span>
+          <span class="brand-text">Fall in Love</span>
+        </a>
+      </div>
+
+      <div class="header-center">
+        <!-- Stage Progress Indicator -->
+        <div class="stage-progress-container" id="stage-progress-container">
+          <div class="stage-progress-bar" id="stage-progress-bar"></div>
+          <span class="stage-progress-label" id="stage-progress-label">Main Page: Prologue</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button id="audio-mute-toggle" class="icon-circle-btn" title="Toggle Sound / Mute (Press M)" aria-label="Toggle Sound">
+          <svg id="sound-icon-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg id="sound-icon-off" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Full-Screen Stage Carousel / Container -->
+    <main id="app-viewport" class="app-viewport">
+      <div id="stage-card-wrapper" class="stage-card-wrapper">
+        <!-- Rendered dynamically by StageCard.js / HeroSection.js -->
+      </div>
+
+      <!-- Arrow Navigation (Left / Right) -->
+      <button id="nav-prev-btn" class="viewport-nav-btn nav-prev hidden" aria-label="Previous Stage (Left Arrow)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button id="nav-next-btn" class="viewport-nav-btn nav-next" aria-label="Next Stage (Right Arrow)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </main>
+
+    <!-- Sticky Glassmorphism Bottom Tab Navigation -->
+    <nav class="bottom-dock-nav" id="bottom-dock-nav" aria-label="Stages Navigation">
+      <div class="dock-inner" id="dock-inner">
+        <!-- Injected dynamically by TabNavigation.js -->
+      </div>
+    </nav>
+
+    <!-- Subtle Toast Notification -->
+    <div id="toast-notification" class="toast-notification hidden" role="status" aria-live="polite"></div>
+
+    <!-- Script Entry Point -->
+    <script src="./src/app-bundle.js"></script>
+  </body>
+</html>
